@@ -1,9 +1,48 @@
 # *Homo ergodicus*
 
-In evolutionary process the real physical impacts of losses are often stronger than those of gains.
+In biological and cultural evolutionary process, the real impacts of losses are often stronger than those of gains.
 If there is even one zero in the sequence of generations, you are extinct.
+More generally, the big losses are essentially all that matter in the long run.
+This is so, even in the simplest stocastical financial model like the geometric Brownian motion.
+One well-known consequence is that variance in fitness matters.
+A lineage A with lower mean fitness than lineage B can still win if variance in fitness is sufficiently smaller.
+This also had effects on how people behave.
+When the asymmetry between real physical effects of gains and losses is large, people quite reasonably 'pay to avoid losses'.
+When the asymmetry vanishes people don't unreasonably mind losses, and won't pay to avoid them.
+
+## Where does this asymmetry come from?
+
+The development of probability theory was motivated by gambling problems.
+The actual starting point is the famous exchange of letters between Fermat and Pascal in 1654.
+They were not looking for gambling advice, they were solving a moral problem: namely how to assess people's hopes and expectations in a fair way.
+
+In economics, a gamble is a random variable, $\delta x$, representing possible changes in wealth, $x$.
+For example, a gamble can model the following situation: toss a coin, and for heads you win 50% of your current wealth, for tails you lose 40%.
+Formally, any **environment** in which agents make decisions can be **modelled** with some kind of stocastic **functions**.
+
+Having an stocastic function that represent the environment the question is how to find the optimal policy.
+From Pascal and Fermat a rule of thumb had become as the well-established behavioural model: given the choice between two gambles, we pick the greater
+expected wealth change.
+
+$$\int_{} $$
+
+
+
+But is this model realistic?
+
+
+
+
+
+
+
+
+
+
+
+
 This is because we are facing a multiplicative process.
-But we very often study systems at weak selection limit where non-ergodic effects vanish
+
 
 
 When the asymmetry between real physical effects of gains and losses is large, people quite reasonably 'pay to avoid losses' (e.g. buy insurance).
