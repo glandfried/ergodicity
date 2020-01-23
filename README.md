@@ -21,8 +21,11 @@ For example, a gamble can model the following situation: toss a coin, and for he
 Formally, any **environment** in which agents make decisions can be **modelled** with some kind of stocastic **functions**.
 
 Having an stocastic function that represent the environment the question is how to find the optimal policy.
-From Pascal and Fermat a rule of thumb had become as the well-established behavioural model: given the choice between two gambles, we pick the greater
+From Pascal and Fermat onwards a rule of thumb had become as the well-established behavioural model: given the choice between two gambles, we pick the greater
 expected wealth change.
+The belief that the expected value was sufficient to describe any stochastic function was consolidated. 
+This
+
 
 $$\int_{} $$
 
