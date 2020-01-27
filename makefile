@@ -5,7 +5,7 @@ push:
 	git commit -m "$(m)"
 	git push origin master
 	cd ..
-	git add ergodicity
+	git add ./ergodicity/
 	git commit -m "Update ergodicity"
 	git push origin master
 
