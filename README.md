@@ -9,27 +9,23 @@ A lineage A with lower mean fitness than lineage B can still win if variance in 
 This also had effects on how people behave.
 When the asymmetry between real physical effects of gains and losses is large, people quite reasonably 'pay to avoid losses'.
 When the asymmetry vanishes people don't unreasonably mind losses, and won't pay to avoid them.
+**La simetria o asimentria depende del medioambiente en el cual los agentes toman decisiones**
 
-## Where does this asymmetry come from?
+## Analysing environments
 
-The development of probability theory was motivated by gambling problems.
+In order to analyze an **environment** in which agents make decisions, we need to **represent** it with some kind of stochastic **function**.
+The development of probability theory was motivated this purpose.
 The actual starting point is the famous exchange of letters between Fermat and Pascal in 1654.
-They were not looking for gambling advice, they were solving a moral problem: namely how to assess people's hopes and expectations in a fair way.
+They wanted to solve how to assess people's hopes and expectations in a fair way.
 
 In economics, a gamble is a random variable, $\delta x$, representing possible changes in wealth, $x$.
 For example, a gamble can model the following situation: toss a coin, and for heads you win 50% of your current wealth, for tails you lose 40%.
-Formally, any **environment** in which agents make decisions can be **modelled** with some kind of stocastic **functions**.
-
 Having an stocastic function that represent the environment the question is how to find the optimal policy.
-From Pascal and Fermat onwards a rule of thumb had become as the well-established behavioural model: given the choice between two gambles, we pick the greater
-expected wealth change.
-The belief that the expected value was sufficient to describe any stochastic function was consolidated. 
-This
 
+After Pascal and Fermat onwards a rule of thumb had become as the well-established behavioural model: given the choice between two gambles, we pick the greater expected wealth change.
+The belief that the expected value was sufficient to describe any stochastic function was consolidated. 
 
 $$\int_{} $$
-
-
 
 But is this model realistic?
 
