@@ -1,3 +1,8 @@
+bib:
+	make pull -C ./biblio/
+	cp biblio/topic/ergodicity.bib ergodicity.bib
+
+
 push:
 	git submodule update --init biblio/
 	cp biblio/topic/ergodicity.bib ergodicity.bib
