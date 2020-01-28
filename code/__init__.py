@@ -86,11 +86,9 @@ def gr_mult(rate,dt):
     """
     return np.log(rate)/dt
 
-
-
 """
 To perturb the process in a consistent way, we remind ourselves
-that what’s constant about the process in the absence of noise is the
+that what's constant about the process in the absence of noise is the
 growth rate
 """
 
@@ -109,14 +107,13 @@ def walk_perturbed_payment(n,rate,dt,sigma=100):
     wealth = [1]
     for i in range(n):
         dv = perturbed_payment(rate,dt,sigma)
-        wealth.append(wealth[-1]*np.exp(dv))
+        wealth.append(wealth[-1]+wealth[-1]*dv)
     return wealth
         
 def show_walk_perturbed_payment(n=10,iterations=1000,rate=1.005,dt=1/12,sigma=100):
     """
-    show_walk_perturbed_payment(n=150,sigma=4)
+    show_walk_perturbed_payment(n=10,sigma=2)
     show_walk_perturbed_payment(n=1,sigma=0)
-    
     """
     for i in range(n):
         plt.plot(np.log10(walk_perturbed_payment(iterations,rate,dt,sigma)) )
