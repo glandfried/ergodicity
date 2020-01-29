@@ -1,11 +1,24 @@
 # *Homo ergodicus*
 
 In biological and cultural evolutionary process, the real impacts of losses are often stronger than those of gains.
-If there is even one zero in the sequence of generations, you are extinct.
-More generally, the big losses are essentially all that matter in the long run.
-This is so, even in the simplest stocastical financial model like the geometric Brownian motion.
-One well-known consequence is that variance in fitness matters.
-A lineage A with lower mean fitness than lineage B can still win if variance in fitness is sufficiently smaller.
+If there is even one zero in the sequence of generations, we are extinct.
+In this contexts, the big losses are essentially all that matter in the long run.
+
+![simple_gamble](./image/simple_gamble.png)
+
+One consequence is that variance in fitness realy matters.
+A lineage (or a community) A with lower mean fitness than lineage (or a community) B can still win if variance in fitness is sufficiently smaller.
+An effective way to reduce variance is to cooperate, by sharing wealth.
+
+One why to reduce variance in fitness ooperatation.
+t if two agents can share their "wealth," together they reduce the variance and this increases the gain for both. That is, cooperating is not an altruistic act as it was proposed. There is a concrete physical advantage in multiplicative process.
+
+
+
+
+
+
+
 This also had effects on how people behave.
 When the asymmetry between real physical effects of gains and losses is large, people quite reasonably 'pay to avoid losses'.
 When the asymmetry vanishes people don't unreasonably mind losses, and won't pay to avoid them.
