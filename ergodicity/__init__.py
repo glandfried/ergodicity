@@ -2,10 +2,15 @@
    :copyright: (c) 2020 by Gustavo Landfried
    :license: BSD, see LICENSE for more details.
 """
+import os
 import math
 import numpy as np
 from numpy.random import normal as rnorm
 from matplotlib import pyplot as plt 
+
+
+__all__ = ["dW","wiener"]
+
 
 
 def dW(pos=0,step=1):
@@ -47,19 +52,8 @@ def walk_simple_gamble(iteratons):
     for i in range(iteratons):
         res.append(simple_gamble(res[-1]))
     return res
-
-def show_simple_gamble_walks(n,iterations=100):
-    """
-    show_simple_gamble_walks(10,1000)
-    """
-    delta_expected = 1.5*0.5+0.6*0.5 - 1 # <\Delta x>
-    time_average = np.log(1.5)*0.5+np.log(0.6)*0.5 # <\Delta ln x>
-    for i in range(n):
-        plt.plot(np.log10(walk_simple_gamble(iterations)))
-    plt.plot([0,iterations],np.log10([1,(1+delta_expected)**iterations ]) )
-    plt.plot([0,iterations],np.log10([1,(1+time_average)**iterations ]) )
     
-def mult(n,rate,dt):
+def multiplicative_process(n,rate,dt):
     wealth = [1]
     time = [0]
     for i in range(n):
@@ -69,11 +63,11 @@ def mult(n,rate,dt):
 
 def show_mult(n=120,rate=1.01,dt=1/12):
     """
-    show_mult(1,1.20,dt=1)
-    show_mult(12,1.01,dt=1/12)
+    show_mult(12,1.04,dt=1)
+    show_mult(12*12,1.01,dt=1/12)
     """
-    x, y = mult(n,rate,dt)
-    plt.plot(x,y)
+    x, y = multiplicative_process(n,rate,dt)
+    plt.plot(x,np.log10(y))
     
 def gr_mult(rate,dt):
     """
@@ -118,7 +112,4 @@ def show_walk_perturbed_payment(n=10,iterations=1000,rate=1.005,dt=1/12,sigma=10
     for i in range(n):
         plt.plot(np.log10(walk_perturbed_payment(iterations,rate,dt,sigma)) )
         
-
-
-
-
+        
