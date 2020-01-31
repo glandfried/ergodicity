@@ -12,6 +12,39 @@ from matplotlib import pyplot as plt
 __all__ = ["dW","wiener"]
 
 
+def change_in_utility(w):
+    """
+    w = np.array(list(map(lambda x: 10.0**x,np.arange(-10,10))) )
+    change_in_utility(w)
+    """
+    return 1/w
+
+def show_change_in_utility(w):
+    """
+    w = np.array(list(map(lambda x: 10.0**x,np.arange(-10,10))) )
+    show_change_in_utility(w)
+    """
+    plt.plot(np.log(w),np.log(change_in_utility(w)))
+    plt.xticks(fontsize=12) # rotation=90
+    plt.yticks(fontsize=12) # rotation=90
+    plt.ylabel("Change in utility (log scale)", fontsize=16 )
+    plt.xlabel("Wealth (log scale)", fontsize=16 )
+
+def utility(w):
+    return np.log(w)
+
+def show_utility(w):
+    """
+    w = np.array(list(map(lambda x: 10.0**x,np.arange(-10,10))) )
+    show_utility(w)
+    np.log(10**-10)
+    """
+    plt.plot(w,(utility(w)))
+    plt.xticks(fontsize=12) # rotation=90
+    plt.yticks(fontsize=12) # rotation=90
+    plt.ylabel("Utility", fontsize=16 )
+    plt.xlabel("Wealth", fontsize=16 )
+
 
 def dW(pos=0,step=1):
     return rnorm(pos,step,1)[0]
