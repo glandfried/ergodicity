@@ -19,23 +19,12 @@ def change_in_utility(w):
     """
     return 1/w
 
-def show_change_in_utility(w):
-    """
-    w = np.array(list(map(lambda x: 10.0**x,np.arange(-10,10))) )
-    show_change_in_utility(w)
-    """
-    plt.plot(np.log(w),np.log(change_in_utility(w)))
-    plt.xticks(fontsize=12) # rotation=90
-    plt.yticks(fontsize=12) # rotation=90
-    plt.ylabel("Change in utility (log scale)", fontsize=16 )
-    plt.xlabel("Wealth (log scale)", fontsize=16 )
-
 def utility(w):
     return np.log(w)
 
 def show_utility(w):
     """
-    w = np.array(list(map(lambda x: 10.0**x,np.arange(-10,10))) )
+    w = np.arange(-10,10,step=0.1) 
     show_utility(w)
     np.log(10**-10)
     """

@@ -4,8 +4,7 @@ In biological and cultural evolutionary process, the real impacts of losses are 
 If there is even one zero in the sequence of generations, we are extinct.
 In this contexts, typically multiplicative and noisy, the big losses are essentially all that matter in the long run.
 
-Consider the following situation: toss a
-coin, and for heads you win 50% of your current wealth, for tails you lose 40%.
+Consider the following situation: toss a coin, and for heads you win 50% of your current wealth, for tails you lose 40%.
 **Having a stocastic *function* that *represent* an *environment* the question is how to *find the optimal behavior* **.
 The development of probability theory was motivated by this purpose.
 
