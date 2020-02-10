@@ -1,21 +1,16 @@
 # *Homo ergodicus*
 
 It was considered an established truth that cooperation required some kind of altruistic behavior to evolve.
-However, if the gains and losses of the participants are multiplicative, then the cooperative behavior becomes highly preferable and might in fact be realized in a very wide
-range of realistic examples.
+Indeed, one of the most important theorists of the evolution of cooperation, Martin Nowak, analyse in one of the most prestigious scientific journals, Nature, some relevant rules for the evolution of cooperation ([here](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3279745/pdf/nihms49939.pdf)).
+Each rule summarized a benefit-to-cost ratio of an *altruistic* act with respect to some critical value.
+He claimed that the most remarkable aspect of evolution is its ability to generate cooperation in a competitive world.
 
-The puzzle resides in the fact that the very existence of our society, human civilization and many animal societies is based on a much higher level of cooperation than suggested by the above models.
-
-This has happened because ergodicity
-was implicitly assumed.
-
-
+However, we will see that this has happened because ergodicitywas implicitly assumed.
 In evolutionary theory everyone is taught the fact that lineage growth is a multiplicative and noisy process.
 There is a sequence survival and reproductive probabilities.
 If there is even one zero in the sequence of generations, we are extinct.
-In this contexts, the big losses are essentially all that matter in the long run.
-
-
+We will see that in this contexts, the cooperative behavior becomes highly preferable and might in fact be realized in a very wide
+range of realistic examples.
 
 Consider the following situation: toss a coin, and for heads you win 50% of your current wealth, for tails you lose 40%.
 This is stocastic **function** that **represent** an **environment**.
