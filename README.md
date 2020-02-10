@@ -1,8 +1,21 @@
 # *Homo ergodicus*
 
-In biological and cultural evolutionary process, the real impacts of losses are often stronger than those of gains.
+It was considered an established truth that cooperation required some kind of altruistic behavior to evolve.
+However, if the gains and losses of the participants are multiplicative, then the cooperative behavior becomes highly preferable and might in fact be realized in a very wide
+range of realistic examples.
+
+The puzzle resides in the fact that the very existence of our society, human civilization and many animal societies is based on a much higher level of cooperation than suggested by the above models.
+
+This has happened because ergodicity
+was implicitly assumed.
+
+
+In evolutionary theory everyone is taught the fact that lineage growth is a multiplicative and noisy process.
+There is a sequence survival and reproductive probabilities.
 If there is even one zero in the sequence of generations, we are extinct.
-In this contexts were process are multiplicative and noisy the big losses are essentially all that matter in the long run.
+In this contexts, the big losses are essentially all that matter in the long run.
+
+
 
 Consider the following situation: toss a coin, and for heads you win 50% of your current wealth, for tails you lose 40%.
 This is stocastic **function** that **represent** an **environment**.
@@ -11,8 +24,7 @@ The development of probability theory was motivated by this purpose.
 
 ## The original treatment
 
-The actual starting is the famous exchange of letters between Fermat and Pascal in 1654.
-A few years later, Huygens (1657) states that *agents maximize expectation values of changes in wealth* (Model 1).
+Huygens (1657) states that *agents maximize expectation values of changes in wealth* (Model 1).
 This is, multiply each possible earnings by its probability of obtaining it, and add everything.
 
 $$\text{expected value of $f$} = \sum_s p(s)f(s) $$
@@ -21,8 +33,6 @@ In the previous example, the expected value of the environment is $0.05 = 0.5 \$
 
 If we consider that the expected value is an objective description of what happens to the agents in the environment, then this would be the "fair" value to be paid to participate in the game.
 But, you wolud play that game?
-
-
 
 ## The utility theory
 

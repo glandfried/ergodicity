@@ -1,10 +1,11 @@
 bib:
-	make pull -C ./biblio/
-	cp biblio/topic/ergodicity.bib biblio.bib
+	git submodule update --init ./biblio/
+	cp biblio/biblio.bib biblio.bib
 	cp biblio/download.sh download.sh
 
 download:
-	sh download.sh	
+	sh download.sh yaari2010-cooperationEvolution
+	sh download.sh peters2015-evolutionaryAdvantageOfCooperation
 
 
 push:
