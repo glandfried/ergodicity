@@ -1,4 +1,4 @@
-# *Homo ergodicus*
+
 
 **It was considered an established truth that cooperation required some kind of altruistic behavior to evolve**.
 Indeed, one of the most important theorists of the evolution of cooperation, Martin Nowak, analyse in one of the most prestigious scientific journals, Nature, a set of relevant rules for the evolution of cooperation ([here](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3279745/pdf/nihms49939.pdf)).
@@ -76,7 +76,7 @@ A the new "Homo ergodicus" now fit human behavior, which usually cares about oth
 
 ## References
 
-Nowak, M. 2006. Five rules for the evolution of cooperation. Nature.
-Peters, O. 2019. The ergodicity problem in economics. Nature.
-Yaarin, G. 2010. Cooperation evolution in random multiplicative environments. The European Physical Journal B.
-Meder, D. et al. 2019. Ergodicity-breaking reveals time optimal economic behavior in humans (v2). ArXiv.
+- Nowak, M. 2006. Five rules for the evolution of cooperation. Nature.
+- Peters, O. 2019. The ergodicity problem in economics. Nature.
+- Yaarin, G. 2010. Cooperation evolution in random multiplicative environments. The European Physical Journal B.
+- Meder, D. et al. 2019. Ergodicity-breaking reveals time optimal economic behavior in humans (v2). ArXiv.
