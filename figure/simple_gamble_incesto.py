@@ -10,13 +10,21 @@ import ergodicity
 #reload(ergodicity)
 
 
-def plot(n,iterations=100):#n=2
+def plot(n=150,iterations=1000):
     np.random.seed(1)
     delta_expected = 1.5*0.5+0.6*0.5 - 1 # <\Delta x>
     time_average = np.log(1.5)*0.5+np.log(0.6)*0.5 # <\Delta ln x>
+
+    history = np.matrix(ergodicity.walk_incest(iterations,n,incest=0))
     
     for i in range(n):
-        plt.plot(np.log10(ergodicity.walk_simple_gamble(iterations)))
+        plt.plot(np.log10(history[:,i]))
+
+    history = np.matrix(ergodicity.walk_incest(iterations,n,incest=0.05))
+    
+    for i in range(n):
+        plt.plot(np.log10(history[:,i]))
+
 
     plt.plot([0,iterations],np.log10([1,(1+delta_expected)**iterations ]) , color="black")
     plt.plot([0,iterations],np.log10([1,(1+time_average)**iterations ]), color="black" )

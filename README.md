@@ -1,21 +1,38 @@
 # *Homo ergodicus*
 
-It was considered an established truth that cooperation required some kind of altruistic behavior to evolve.
-Indeed, one of the most important theorists of the evolution of cooperation, Martin Nowak, analyse in one of the most prestigious scientific journals, Nature, some relevant rules for the evolution of cooperation ([here](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3279745/pdf/nihms49939.pdf)).
-Each rule summarized a benefit-to-cost ratio of an *altruistic* act with respect to some critical value.
-He claimed that the most remarkable aspect of evolution is its ability to generate cooperation in a competitive world.
+**It was considered an established truth that cooperation required some kind of altruistic behavior to evolve**.
+Indeed, one of the most important theorists of the evolution of cooperation, Martin Nowak, analyse in one of the most prestigious scientific journals, Nature, a set of relevant rules for the evolution of cooperation ([here](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3279745/pdf/nihms49939.pdf)).
+All the rules summarized a benefit-to-cost ratio of an *altruistic* act with respect to some critical value.
+At the end of the paper, he claimed that the most remarkable aspect of evolution is its ability to generate cooperation in a competitive world.
 
-However, we will see that this has happened because ergodicitywas implicitly assumed.
-In evolutionary theory everyone is taught the fact that lineage growth is a multiplicative and noisy process.
-There is a sequence survival and reproductive probabilities.
+We will see that his surprise can only arise if **we are implicitly assuming that evolutionary systems are *ergodic*.**
+If you work in evolutionary theory it is time to know this concept.
+It is not new to anyone that evolutionary processes are essentially temporary processes, the result of what happens to a genetic or cultural lineage in time.
+
+A system is ergodic if time average equals its expectation value,
+
+
+
+In evolutionary theory everyone is taught the fact that lineage growth is a multiplicative and noisy process: a sequence of survival and reproductive probabilities.
+In this contexts the real physical impacts of losses are often stronger than those of gains.
 If there is even one zero in the sequence of generations, we are extinct.
+One consequence is that variance in fitness realy matters.
 We will see that in this contexts, the cooperative behavior becomes highly preferable and might in fact be realized in a very wide
 range of realistic examples.
+
+
+
+
+A lineage A with lower mean fitness than lineage B can still win if variance in fitness is sufficiently smaller.
+An effective way to reduce variance is to cooperate, by sharing wealth.
+That is, cooperating is not an altruistic act as it was proposed. There is a concrete physical advantage in multiplicative process.
 
 Consider the following situation: toss a coin, and for heads you win 50% of your current wealth, for tails you lose 40%.
 This is stocastic **function** that **represent** an **environment**.
 The question know is how to **find the optimal behavior**.
 The development of probability theory was motivated by this purpose.
+
+
 
 ## The original treatment
 
@@ -60,13 +77,6 @@ Thir expected value of change in the toss example is $-0.05 \approx  0.5 ln \$0.
 
 
 
-
-
-
-One consequence is that variance in fitness realy matters.
-
-
-
 A different model was put forward by Bernoulli (1738).
 
 
@@ -83,12 +93,6 @@ However, if we look at what actually happens to many individual players, we will
 
 The expected utility theory systematically observed how people acted contrary to what was considered optimal.
 Paired with a firm belief in its models, this has led to a narrative of human irrationality in large parts of economics.
-
-
-A lineage (or a community) A with lower mean fitness than lineage (or a community) B can still win if variance in fitness is sufficiently smaller.
-An effective way to reduce variance is to cooperate, by sharing wealth.
-That is, cooperating is not an altruistic act as it was proposed. There is a concrete physical advantage in multiplicative process.
-
 
 This also had effects on how people behave.
 When the asymmetry between real physical effects of gains and losses is large, people quite reasonably 'pay to avoid losses'.

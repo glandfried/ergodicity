@@ -75,6 +75,40 @@ def walk_simple_gamble(iteratons):
         res.append(simple_gamble(res[-1]))
     return res
     
+def incest_rule(communities,incest=1):
+    res = []
+    n = len(communities)
+    share = sum(communities)/n
+    for c in range(n):
+        res.append(communities[c]*(1-incest) + share*incest)
+    return res 
+
+def init_communities(n_communities):
+    communities = []
+    for i in range(n_communities):
+        communities.append(1.0)
+    return communities
+
+def walk_incest(iteratons,n_communities,incest=1):     
+    communities = init_communities(n_communities)
+    history = []
+    history.append(communities)
+    for i in range(iteratons):
+        history.append(incest_rule(list(map(lambda x: simple_gamble(x), history[-1])),incest ) )
+    return history
+ 
+def walk_sharing(iteratons=1000,n_communities=150):
+    communities = init_communities(n_communities)
+    history = []
+    history.append(communities)
+    for i in range(iteratons):
+        proportion = list(map(lambda x: x/n_communities, history[-1] ))
+        shared = sum(history[-1])
+        shared = simple_gamble(shared) # El problema es jugar en grupo. Ley de los grandes n\'umeros.
+        history.append(list(map(lambda x: shared*x, proportion)))
+    return history
+    
+
 def multiplicative_process(n,rate,dt):
     wealth = [1]
     time = [0]
