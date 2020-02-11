@@ -75,12 +75,11 @@ def walk_simple_gamble(iteratons):
         res.append(simple_gamble(res[-1]))
     return res
     
-def incest_rule(communities,incest=1):
+def incest_rule(communities_size,incest=0.05):
     res = []
-    n = len(communities)
-    share = sum(communities)/n
-    for c in range(n):
-        res.append(communities[c]*(1-incest) + share*incest)
+    migration_per_community = (incest*sum(communities_size))/len(communities_size)
+    for c in range(len(communities_size)):
+        res.append(communities_size[c]*(1-incest) + migration_per_community)
     return res 
 
 def init_communities(n_communities):
@@ -94,7 +93,7 @@ def walk_incest(iteratons,n_communities,incest=1):
     history = []
     history.append(communities)
     for i in range(iteratons):
-        history.append(incest_rule(list(map(lambda x: simple_gamble(x), history[-1])),incest ) )
+        history.append(list(map(lambda x: simple_gamble(x), incest_rule(history[-1],incest) ) ))
     return history
  
 def walk_sharing(iteratons=1000,n_communities=150):

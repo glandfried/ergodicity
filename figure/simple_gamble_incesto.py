@@ -15,11 +15,6 @@ def plot(n=150,iterations=1000):
     delta_expected = 1.5*0.5+0.6*0.5 - 1 # <\Delta x>
     time_average = np.log(1.5)*0.5+np.log(0.6)*0.5 # <\Delta ln x>
 
-    history = np.matrix(ergodicity.walk_incest(iterations,n,incest=0))
-    
-    for i in range(n):
-        plt.plot(np.log10(history[:,i]))
-
     history = np.matrix(ergodicity.walk_incest(iterations,n,incest=0.05))
     
     for i in range(n):

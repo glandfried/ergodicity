@@ -4,173 +4,79 @@
 Indeed, one of the most important theorists of the evolution of cooperation, Martin Nowak, analyse in one of the most prestigious scientific journals, Nature, a set of relevant rules for the evolution of cooperation ([here](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3279745/pdf/nihms49939.pdf)).
 All the rules summarized a benefit-to-cost ratio of an *altruistic* act with respect to some critical value.
 At the end of the paper, he claimed that the most remarkable aspect of evolution is its ability to generate cooperation in a competitive world.
-
 We will see that his surprise can only arise if **we are implicitly assuming that evolutionary systems are *ergodic*.**
-If you work in evolutionary theory it is time to know this concept.
-It is not new to anyone that evolutionary processes are essentially temporary processes, the result of what happens to a genetic or cultural lineage in time.
+If you don't know what does ergodic mean, go ahead.
 
-A system is ergodic if time average equals its expectation value,
-
-
-
+Evolutionary processes are essentially temporary processes.
 In evolutionary theory everyone is taught the fact that lineage growth is a multiplicative and noisy process: a sequence of survival and reproductive probabilities.
-In this contexts the real physical impacts of losses are often stronger than those of gains.
-If there is even one zero in the sequence of generations, we are extinct.
-One consequence is that variance in fitness realy matters.
-We will see that in this contexts, the cooperative behavior becomes highly preferable and might in fact be realized in a very wide
-range of realistic examples.
+In the filed, we make use of mathematics to analyze what happens to a genetic or cultural lineage over time.
+For this purpose **we represent the real environment through a stochastic function**.
+For example, consider the following toy environment.
+Nature toss a coin.
+For heads your community grows 50% of their current size.
+For tails your community lose 40% of their members.
 
+```python
+def environment(size):
+    if np.random.random() <= 0.5:
+        res = 1.5*x
+    else:
+        res = 0.6*x
+    return res
+```
 
-
-
-A lineage A with lower mean fitness than lineage B can still win if variance in fitness is sufficiently smaller.
-An effective way to reduce variance is to cooperate, by sharing wealth.
-That is, cooperating is not an altruistic act as it was proposed. There is a concrete physical advantage in multiplicative process.
-
-Consider the following situation: toss a coin, and for heads you win 50% of your current wealth, for tails you lose 40%.
-This is stocastic **function** that **represent** an **environment**.
-The question know is how to **find the optimal behavior**.
+The question know is how to analyse the stochastic function in order to **find the expected outcome**, i.e. what will happen to agents typically.
 The development of probability theory was motivated by this purpose.
 
+The original treatment (Pascal-Fermat-Huygens) states that the expected outcome can be found by multiplying each possible change in size by its probability of occurrence, and add everything.
+Let $\Delta(s)$ be the change in size at state $s$ and $p(s)$ the probability of state $s$, then the expected outcome will be.
 
+$$\text{expected outcome} = \sum_s p(s)\Delta(s)$$
 
-## The original treatment
-
-Huygens (1657) states that *agents maximize expectation values of changes in wealth* (Model 1).
-This is, multiply each possible earnings by its probability of obtaining it, and add everything.
-
-$$\text{expected value of $f$} = \sum_s p(s)f(s) $$
-
-In the previous example, the expected value of the environment is $0.05 = 0.5 \$0.5 + 0.5 \$(-0.4)$.
-
-If we consider that the expected value is an objective description of what happens to the agents in the environment, then this would be the "fair" value to be paid to participate in the game.
-But, you wolud play that game?
-
-## The utility theory
-
-This model doesn’t work, and that was noticed early.
-People did not behave as expected.
-A categorical example was given in 1713 by Nicolas Bernoulli.
-He proposed a hypothetical game whose expectation value was divergent with a non-existent first moment, known as the St. Petersburg paradox.
-The expected wealth model tells us that we would pay any finite fee, but that went against intuition.
-
-The modern **utility theory** born as a solution to this St. Petersburg paradox.
-In 1738 Daniel Bernoulli introduce the utility function over wealth, $u(x)$, to encodes the different preferences individuals.
-
-In general, the utility (i.e. particular preference) of extra wealth is roughly inversely proportional to how many wealth one already has.
-This leads to a diferential change in utility $du = 1/x dx$, with solution $u(x) = ln x$.
-![utility](./static/utility)
-
-D. Bernoulli state that *people maximize expectation values of changes in utility of wealth* (Model 2).
-In other words, people don't consider the expected changes in wealth, $x$, but the expected change in thier own idiosyncratic utility function $u_i(x)$.
-
-$$\text{expected value of $u$} = \sum_s p(s)u(s) $$
-
-The logarithmic "utility function" reflects a dislike for risk.
-Thir expected value of change in the toss example is $-0.05 \approx  0.5 ln \$0.5  + 0.5 ln \$(-0.4)$
-
-
-
-## The ergodicity
-
-
-
-
-
-A different model was put forward by Bernoulli (1738).
-
-
-
-
-
-
-
-
-The expected utility theory considers it is preferable to participate in this game, given that the expected value is positive.
-However, if we look at what actually happens to many individual players, we will see that no one achieves what the current economic theory predicts.
+If we analyze the toy environment, we will find that the expected outcome will have a positive change, $0.05\Delta = 0.5 0.5\Delta + 0.5 (-0.4)\Delta$.
+However, even if we consider members as a continuous variable, what really happens over time is very different from what is expected.
 
 ![simple_gamble](./static/simple_gamble.png)
 
-The expected utility theory systematically observed how people acted contrary to what was considered optimal.
+**The expectation over states does not reflect what really happens with the individual agents over time.**
+**This is because we are facing a multiplicative process (Yaarin 2010).**
+In the multiplicative process the real physical impacts of losses are often stronger than those of gains.
+If there is even one zero in the sequence of generations, we are extinct.
+Comparing what happens over time to what happens in expectation is a well-known problem in statistical mechanics, called "the ergodicity problem".
+A system is ergodic if its time average equals its expectation value.
+
+**One consequence is that variance in fitness realy matters**.
+**An effective way to reduce variance is to cooperate, by sharing members between communities.**
+The anthropologist Claude Lévi-Strauss developed a general argument for the universality of the incest taboo in human societies.
+His argument begins with the claim that the incest taboo is in effect a prohibition against endogamy, and the effect is to encourage exogamy. Through exogamy, otherwise unrelated households or lineages will form relationships through marriage, thus strengthening social solidarity.
+
+To experiment the effect of a this kind of rules, we define a toy incest taboo rule, in which a percentage of the community must migrate to other unrelated housholds.
+
+```python
+def incest_rule(communities_size,exogamy=0.05):
+    res = []
+    migration_per_community = (exogamy*sum(communities_size))/len(communities_size)
+    for c in range(len(communities_size)):
+        res.append(communities_size[c]*(1-exogamy) + migration_per_community)
+    return res 
+```
+
+If the previous communities, in the same environment, applied a 5% of exogamy we would observe the following behavior.
+
+![incesto](./static/simple_gamble_incesto.png)
+
+Multiplicative process offers a concrete physical advantage in favor of cooperative behavior.
+**The "ergodic" point of view had major implications for all evolutionary science.**
+**Perhaps the most significant change lies in the nature of the model human that arises from our conceptual reframing (Peters 2019).**
+Observed behaviour deviates starkly from the predictions made by the Homo economicus model.
 Paired with a firm belief in its models, this has led to a narrative of human irrationality in large parts of economics.
-
-This also had effects on how people behave.
-When the asymmetry between real physical effects of gains and losses is large, people quite reasonably 'pay to avoid losses'.
-When the asymmetry vanishes people don't unreasonably mind losses, and won't pay to avoid them.
+If humans evolved in non-ergodic environments they should be able to intuitively evaluate and adapt to the temporal consequences of the different scenarios, as the copenhagen experiment seems to have shown (Meder 2019).
+A the new "Homo ergodicus" now fit human behavior, which usually cares about others, understands that cooperation leads to better results, and is patient and kind.
 
 
-**La simetria o asimentria depende del medioambiente en el cual los agentes toman decisiones**
+## References
 
-## Analysing environments
-
-In economics, a gamble is a random variable, $\delta x$, representing possible changes in wealth, $x$.
-
-After Pascal and Fermat onwards a rule of thumb had become as the well-established behavioural model: given the choice between two gambles, we pick the greater expected wealth change.
-The belief that the expected value was sufficient to describe any stochastic function was consolidated. 
-
-$$\int_{} $$
-
-But is this model realistic?
-
-
-
-
-
-
-
-
-
-
-
-
-This is because we are facing a multiplicative process.
-
-
-
-When the asymmetry between real physical effects of gains and losses is large, people quite reasonably 'pay to avoid losses' (e.g. buy insurance).
-
-When it is not large, people don't unreasonably mind losses, and won't pay to avoid them.
-
-
-*Comparing what happens over time to what happens in expectation is a well-known problem in statistical mechanics, called "the ergodicity problem.*
-
-
-
-## The start twit ([see](https://twitter.com/rlmcelreath/status/1218456256358375424?s=20))
-
-*If the ergodicity debate about behavioral econ is new to you, maybe a good place to start* 
-
-*In evolutionary theory everyone is taught the fact that lineage growth is a multiplicative process. If there is even one zero in the sequence of generations, you are extinct. More generally, the big losses are essentially all that matter in the long run.*
-
-*One well-known consequence is that variance in fitness matters. A lineage A with lower mean fitness than lineage B can still win if variance in fitness is sufficiently smaller*
-
-## The core twit ([see](https://twitter.com/ole_b_peters/status/1218171528438853632?s=20))
-
-*The real physical impacts of losses are often stronger than those of gains.*
-*This is so, even in the simplest mathematical finance model (geometric Brownian motion).*
-*But it's only visible when we compute what happens over time, not in expectation.*
-
-*Comparing what happens over time to what happens in expectation is a well-known problem in statistical mechanics, called "the ergodicity problem.*
-
-
-
-## The paper
-
-## The experiment
-
-## The consecuences
-
-## Some code
-
-
-
-A system is ergodic if its time average equals its expectation value, that is, if it satisfies Birkhoff’s equation:
-
-$$ \int $$
-
-## meder2019-ergodicityBreaking
-
-
-
-
-La tema de la ergodicidad es central siempre que se vaya a representar el entorno de unos agentes. Parece obvio decir que es necesario elegir una función que represente CORRECTAMENTE el entorno de los agentes. Durante mucho tiempo se representó el entorno a través del "valor esperado", el promedio ponderado de todos los entornos que podría alcanzar el sistema. Sin embargo, al menos en los sistemas evolutivos, biológico, cultural, económico, en los que "tocar el cero" implica la extinción o la marginación irreversible (en general en cualquier proceso multiplicativo), es un error representar el entorno a través del valor esperado porque este es DISTINTO del verdadero entorno de los agentes, aquello que efectivamente pueden conseguir en promedio en su período de vida (incluso en el infinito). Cuando las dos representaciones del entorno dan valor distintos se dice que el sistema es no-ergódico y viceversa.
+Nowak, M. 2006. Five rules for the evolution of cooperation. Nature.
+Peters, O. 2019. The ergodicity problem in economics. Nature.
+Yaarin, G. 2010. Cooperation evolution in random multiplicative environments. The European Physical Journal B.
+Meder, D. et al. 2019. Ergodicity-breaking reveals time optimal economic behavior in humans (v2). ArXiv.
