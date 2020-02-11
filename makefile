@@ -1,7 +1,7 @@
 bib:
 	git submodule update --init ./biblio/
-	cp biblio/biblio.bib biblio.bib
-	cp biblio/download.sh download.sh
+	ln -s biblio/biblio.bib biblio.bib
+	ln -s biblio/download.sh download.sh
 
 download:
 	sh download.sh yaari2010-cooperationEvolution
