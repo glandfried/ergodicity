@@ -5,7 +5,7 @@ Indeed, one of the most important theorists of the evolution of cooperation, Mar
 All the rules summarized a benefit-to-cost ratio of an *altruistic* act with respect to some critical value.
 At the end of the paper, he claimed that the most remarkable aspect of evolution is its ability to generate cooperation in a competitive world.
 We will see that his surprise can only arise if **we are implicitly assuming that evolutionary systems are *ergodic*.**
-If you don't know what does ergodic mean, read on.
+If you don't know what ergodic mean, read on.
 
 Evolutionary processes are essentially temporary processes.
 In evolutionary theory everyone is taught the fact that lineage growth is a multiplicative and noisy process: a sequence of survival and reproductive probabilities.
