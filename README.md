@@ -19,13 +19,13 @@ For tails your community lose 40% of their members.
 ```python
 def environment(size):
     if np.random.random() <= 0.5:
-        res = 1.5*x
+        res = 1.5*size
     else:
-        res = 0.6*x
+        res = 0.6*size
     return res
 ```
 
-The question know is how to analyse the stochastic function in order to **find the expected outcome**, i.e. what will happen to agents typically.
+The question, now, is how to analyse the stochastic function in order to **find the expected outcome**, i.e. what will happen to agents typically.
 The development of probability theory was motivated by this purpose.
 
 The original treatment (Pascal-Fermat-Huygens) states that the expected outcome can be found by multiplying each possible change in size by its probability of occurrence, and add everything.
@@ -55,9 +55,9 @@ To experiment the effect of a this kind of rules, we define a toy incest taboo r
 ```python
 def incest_rule(communities_size,exogamy=0.05):
     res = []
-    migration_per_community = (exogamy*sum(communities_size))/len(communities_size)
+    migration_per_community = exogamy*sum(communities_size)/len(communities_size)
     for c in range(len(communities_size)):
-        res.append(communities_size[c]*(1-exogamy) + migration_per_community)
+        res.append( communities_size[c]*(1-exogamy) + migration_per_community )
     return res 
 ```
 

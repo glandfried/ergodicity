@@ -65,25 +65,6 @@ $$\int_{} $$
 But is this model realistic?
 
 
-
-
-
-
-
-
-
-
-
-
-This is because we are facing a multiplicative process.
-
-
-
-When the asymmetry between real physical effects of gains and losses is large, people quite reasonably 'pay to avoid losses' (e.g. buy insurance).
-
-When it is not large, people don't unreasonably mind losses, and won't pay to avoid them.
-
-
 *Comparing what happens over time to what happens in expectation is a well-known problem in statistical mechanics, called "the ergodicity problem.*
 
 
@@ -103,25 +84,6 @@ When it is not large, people don't unreasonably mind losses, and won't pay to av
 *But it's only visible when we compute what happens over time, not in expectation.*
 
 *Comparing what happens over time to what happens in expectation is a well-known problem in statistical mechanics, called "the ergodicity problem.*
-
-
-
-## The paper
-
-## The experiment
-
-## The consecuences
-
-## Some code
-
-
-
-A system is ergodic if its time average equals its expectation value, that is, if it satisfies Birkhoff’s equation:
-
-$$ \int $$
-
-## meder2019-ergodicityBreaking
-
 
 
 
