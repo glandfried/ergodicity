@@ -4,6 +4,7 @@ bib:
 	- ln -s -f biblio/download.sh download.sh
 
 update:
+	git submodule update --init ./ergodicity/
 	git submodule update --init ./biblio/
 	make pull -C ./biblio/
 	git add ./biblio/
